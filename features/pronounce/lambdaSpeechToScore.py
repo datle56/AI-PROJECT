@@ -2,21 +2,21 @@ import torch
 import json
 import os
 # import WordMatching as wm
-import utilsFileIO
+from . import utilsFileIO
 # import pronunciationTrainer
 import base64
 import time
 # import audioread
 import numpy as np
 from torchaudio.transforms import Resample
-import model
+from . import model
 from transformers import Wav2Vec2Processor
-from model import CustomWav2Vec2ForCTC  # Import mô hình từ file model.py
+from .model import CustomWav2Vec2ForCTC
 
 checkpoint_dir = r"D:\DOANTOTNGHIEP\code\archive\checkpoint-50000"
 processor = Wav2Vec2Processor.from_pretrained(r'D:\DOANTOTNGHIEP\code\archive')
 model = CustomWav2Vec2ForCTC.from_pretrained(checkpoint_dir)
-import WordMatching
+from . import WordMatching
 import eng_to_ipa as ipa
 import librosa
 # trainer_SST_lambda = {}

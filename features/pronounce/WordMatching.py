@@ -1,4 +1,4 @@
-import WordMetrics
+from . import WordMetrics
 from ortools.sat.python import cp_model
 import numpy as np
 from string import punctuation
