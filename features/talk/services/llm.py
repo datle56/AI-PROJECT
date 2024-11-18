@@ -5,9 +5,9 @@ from typing import Optional
 from langchain.chat_models import ChatOpenAI
 from langchain.callbacks.streaming_stdout import StreamingStdOutCallbackHandler
 from langchain.schema import BaseMessage, HumanMessage, SystemMessage
-from logger import get_logger
-from utils import timed
-from services.base import AsyncCallbackTextHandler, AsyncCallbackAudioHandler
+from features.talk.logger import get_logger
+from features.talk.utils import timed
+from features.talk.services.base import AsyncCallbackTextHandler, AsyncCallbackAudioHandler
 
 dotenv.load_dotenv()
 logger = get_logger(__name__)

@@ -1,17 +1,17 @@
 from fastapi import APIRouter, WebSocket, WebSocketDisconnect
 import asyncio
-from services.llm import LLM
+from features.talk.services.llm import LLM
 from fastapi import APIRouter, Depends, HTTPException, Path, Query, WebSocket, WebSocketDisconnect
 from sqlalchemy.orm import Session
 # from app.database.connection import get_db
-from services import get_speech_to_text, get_text_to_speech
-from services.base import AsyncCallbackTextHandler, TextToSpeech, SpeechToText, AsyncCallbackAudioHandler
-from logger import get_logger
-from utils import *
+from features.talk.services import get_speech_to_text, get_text_to_speech
+from features.talk.services.base import AsyncCallbackTextHandler, TextToSpeech, SpeechToText, AsyncCallbackAudioHandler
+from features.talk.logger import get_logger
+from features.talk.utils import *
 import uuid
 timer = get_timer()
 logger = get_logger(__name__)
-router = APIRouter()
+# router = APIRouter()
 manager = ConnectionManager()
 
 # Logger và các thành phần quản lý

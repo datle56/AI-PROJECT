@@ -6,8 +6,8 @@ import types
 import speech_recognition as sr
 from faster_whisper import WhisperModel
 from pydub import AudioSegment
-from logger import get_logger
-from utils import Singleton, timed
+from features.talk.logger import get_logger
+from features.talk.utils import Singleton, timed
 import dotenv
 from transformers import pipeline
 dotenv.load_dotenv()
