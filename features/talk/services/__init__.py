@@ -1,8 +1,8 @@
 import os
 from typing import Optional
-from services.base import SpeechToText, TextToSpeech
-from services.stt import Whisper
-from services.tts import EdgeTTS
+from features.talk.services.base import SpeechToText, TextToSpeech
+from features.talk.services.stt import Whisper
+from features.talk.services.tts import EdgeTTS
 
 def get_speech_to_text() -> SpeechToText:
     Whisper.initialize(use="api")
@@ -10,7 +10,6 @@ def get_speech_to_text() -> SpeechToText:
 
 def get_text_to_speech() -> TextToSpeech:
 
-    from services.tts import EdgeTTS
 
     EdgeTTS.initialize()
     return EdgeTTS.get_instance()

@@ -8,8 +8,8 @@ from pydantic.dataclasses import dataclass
 from starlette.websockets import WebSocket, WebSocketState
 from sqlalchemy.orm import Session
 
-from models.interaction import Interaction
-from logger import get_logger
+from features.talk.models.interaction import Interaction
+from features.talk.logger import get_logger
 
 
 logger = get_logger(__name__)

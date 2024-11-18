@@ -1,11 +1,11 @@
 from abc import ABC, abstractmethod
 from asyncio import Event
-from logger import get_logger
+from features.talk.logger import get_logger
 from fastapi import WebSocket
 import asyncio
 import os
 from edge_tts import Communicate, VoicesManager
-from utils import Singleton, timed
+from features.talk.utils import Singleton, timed
 
 logger = get_logger(__name__)
 class TextToSpeech(ABC):
