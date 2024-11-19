@@ -1,13 +1,14 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
 from .gector import predict, load_verb_dict
-from transformers import AutoTokenizer
+from transformers import AutoTokenizer, AutoModel
 import torch
 from .grammar_check import llm_feedback
+import os
 # Load resources and model at startup
-encode, decode = load_verb_dict('data/verb-form-vocab.txt')
-model = torch.load('gector-deberta-v3.pth')
-tokenizer = AutoTokenizer.from_pretrained('token')
+encode, decode = load_verb_dict(os.path.join(os.path.dirname(__file__), 'data', 'verb-form-vocab.txt'))
+model = torch.load(os.path.join(os.path.dirname(__file__), 'gector-deberta-v3.pth'))
+tokenizer = AutoTokenizer.from_pretrained(os.path.join(os.path.dirname(__file__), 'token'))
 from fastapi import APIRouter
 
 if torch.cuda.is_available():

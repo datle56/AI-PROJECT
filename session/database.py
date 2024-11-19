@@ -15,6 +15,7 @@ class User(Base):
     username = Column(String, unique=True, index=True)
     email = Column(String, unique=True, index=True)
     password = Column(String)
+    role = Column(String, default="user") 
 
 # Define the Admin model
 class Admin(Base):
@@ -24,3 +25,5 @@ class Admin(Base):
     username = Column(String, unique=True, index=True)
     email = Column(String, unique=True, index=True)
     password = Column(String)
+    role = Column(String, default="admin") 
+
