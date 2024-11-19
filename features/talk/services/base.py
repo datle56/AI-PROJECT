@@ -10,9 +10,9 @@ from langchain.callbacks.streaming_stdout import StreamingStdOutCallbackHandler
 from langchain.schema.messages import BaseMessage
 from asyncio import Event
 
-from services.tts import TextToSpeech
-from logger import get_logger
-from utils import Character, get_timer, timed
+from features.talk.services.tts import TextToSpeech
+from features.talk.logger import get_logger
+from features.talk.utils import Character, get_timer, timed
 
 
 logger = get_logger(__name__)
